@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Usuario - Consultar agenda pacientes</title>
+  <style>
+    :root {
+      --primary: #72B2E6;
+      --primary-dark: #246FC6;
+      --accent: #C62839;
+      --bg: #f5f8fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --border: #d9e3ef;
+      --shadow: 0 10px 28px rgba(36, 111, 198, 0.10);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef5fb 0%, #f8fbff 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #8dc4ef 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 34px 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.03rem;
+      opacity: 0.98;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 14px;
+      color: var(--primary-dark);
+    }
+
+    h3 {
+      margin: 18px 0 10px;
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul, ol {
+      margin: 10px 0 0 22px;
+      padding: 0;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .steps li strong,
+    .highlight {
+      color: var(--primary-dark);
+    }
+
+    .note {
+      border-left: 5px solid var(--primary);
+      background: #f2f8fe;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 14px;
+    }
+
+    .warn {
+      border-left-color: var(--accent);
+      background: #fff4f5;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .box {
+      background: #f8fbff;
+      border: 1px dashed #bfd4ea;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .github-link {
+        text-decoration: None;
+        color: var(--primary-dark);
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 18px 14px 36px; }
+      .hero { padding: 26px 22px; }
+      .hero h1 { font-size: 1.7rem; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Manual de usuario<br>Consultar agenda pacientes</h1>
+      <p>
+        Esta aplicación permite buscar rápidamente la información de un paciente y su agenda utilizando el <strong>RUT</strong>.
+        Su objetivo es facilitar la validación de datos desde una sola pantalla, de forma simple, rápida y visual.
+      </p>
+    </section>
+
+    <section class="grid section">
+      <article class="card">
+        <h2>¿Qué hace esta aplicación?</h2>
+        <p>
+          Consulta la información asociada a un paciente ingresando su RUT y muestra los resultados en dos bloques principales:
+        </p>
+        <ul>
+          <li><span class="highlight">Paciente:</span> nombre, RUT, teléfono y correo.</li>
+          <li><span class="highlight">Agenda:</span> fecha, hora y estado de la cita.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>¿Qué necesito para usarla?</h2>
+        <ul>
+          <li>Tener la aplicación abierta.</li>
+          <li>Ingresar un RUT válido en el campo de búsqueda.</li>
+          <li>Contar con conexión disponible para realizar la consulta.</li>
+        </ul>
+        <div class="note">
+          La consulta se realiza automáticamente al presionar <strong>Enter</strong> o el botón <strong>Enviar</strong>.
+        </div>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h2>Cómo usar la aplicación</h2>
+      <ol class="steps">
+        <li><strong>Abra la aplicación.</strong> Al iniciar, el cursor quedará listo en el campo de ingreso del RUT.</li>
+        <li><strong>Ingrese el RUT del paciente.</strong> Puede escribirlo y luego presionar <strong>Enter</strong> o hacer clic en <strong>Enviar</strong>.</li>
+        <li><strong>Espere la consulta.</strong> El sistema realizará la búsqueda y mostrará un indicador mientras obtiene la información.</li>
+        <li><strong>Revise el resultado.</strong> Si la consulta es exitosa, los campos de paciente y agenda se completarán automáticamente.</li>
+      </ol>
+    </section>
+
+    <section class="two-col section">
+      <article class="card">
+        <h2>Bloque Paciente</h2>
+        <p>En esta sección se mostrará la información principal del paciente consultado:</p>
+        <ul>
+          <li><strong>Nombre:</strong> nombre completo del paciente.</li>
+          <li><strong>RUT:</strong> RUT formateado para una mejor lectura.</li>
+          <li><strong>Teléfono:</strong> número con formato nacional.</li>
+          <li><strong>Correo:</strong> correo electrónico en minúsculas.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Bloque Agenda</h2>
+        <p>En esta sección se mostrará la información de la agenda asociada al paciente:</p>
+        <ul>
+          <li><strong>Fecha:</strong> fecha de la cita.</li>
+          <li><strong>Hora:</strong> hora de atención.</li>
+          <li><strong>Estado:</strong> estado actual de la agenda.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h2>Formato esperado del RUT</h2>
+      <p>
+        El sistema normaliza el RUT para enviar la consulta en el formato requerido por la API.
+        El formato final utilizado es:
+      </p>
+      <div class="box">
+        <strong>Sin puntos, con guion y dígito verificador</strong><br>
+        Ejemplo: <strong>20750523-4</strong>
+      </div>
+      <h3>Ejemplos de entrada válidos</h3>
+      <ul>
+        <li>20.750.523-4</li>
+        <li>20750523-4</li>
+        <li>207505234</li>
+      </ul>
+      <div class="note">
+        La aplicación limpia el formato del RUT antes de consultar. Si el formato ingresado es excesivamente largo o inválido, se mostrará un mensaje de error.
+      </div>
+    </section>
+
+    <section class="two-col section">
+      <article class="card">
+        <h2>Mensajes y resultados</h2>
+        <ul>
+          <li><strong>Consulta exitosa:</strong> se cargan los datos del paciente y agenda.</li>
+          <li><strong>Paciente no encontrado:</strong> se muestra una ventana de error indicando que no existe información asociada al RUT ingresado.</li>
+          <li><strong>RUT requerido:</strong> se muestra si intenta consultar sin ingresar datos.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Botón de ayuda</h2>
+        <p>
+          Junto al encabezado de la aplicación puede existir un botón de ayuda.
+          Al presionarlo, se abrirá esta guía en formato HTML para que el usuario pueda revisar el funcionamiento del sistema en cualquier momento.
+        </p>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h2>Recomendaciones de uso</h2>
+      <ul>
+        <li>Ingrese el RUT completo para evitar errores de búsqueda.</li>
+        <li>Verifique que exista conexión antes de realizar la consulta.</li>
+        <li>Espere a que termine la búsqueda antes de ingresar un nuevo RUT.</li>
+        <li>Si la información no aparece, revise el RUT ingresado y vuelva a consultar.</li>
+      </ul>
+      <div class="note warn">
+        Si el sistema presenta un mensaje de error, revise el dato ingresado o contacte al área responsable si el problema persiste.
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Resumen rápido</h2>
+      <ol>
+        <li>Ingrese el RUT del paciente.</li>
+        <li>Presione <strong>Enter</strong> o <strong>Enviar</strong>.</li>
+        <li>Espere la respuesta.</li>
+        <li>Revise los bloques <strong>Paciente</strong> y <strong>Agenda</strong>.</li>
+      </ol>
+    </section>
+
+    <p class="footer">
+      Documento de ayuda para usuarios finales de la aplicación <strong>Consultar agenda pacientes</strong>.
+    </p>
+  </main>
+
+    <footer class="footer">
+      <h3>Creadores</h3>
+      <p><a href="https://github.com/Dani-XT" target="_blank" class="github-link" rel="noopener noreferrer">Dani-XT</a></p>
+      <p><a href="https://github.com/jaimikelo" target="_blank" class="github-link" rel="noopener noreferrer">jaimikelo</a></p>
+    </footer>
+
+</body>
+</html>
